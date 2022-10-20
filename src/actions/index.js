@@ -1,8 +1,13 @@
 import { getPokemonDetails } from "../api";
-import { SET_FAVORITE, SET_LOADING, SET_POKEMONS } from "./types";
+import { SET_FAVORITE, SET_LOADING, SET_POKEMONS, SET_POKEMONSFILTERED, SET_SEARCHVALUE } from "./types";
 
 export const setPokemons = (payload) => ({
     type: SET_POKEMONS,
+    payload
+})
+
+export const setPokemonsFiltered = (payload) => ({
+    type: SET_POKEMONSFILTERED,
     payload
 })
 
@@ -16,10 +21,16 @@ export const setFavorite = (payload) => ({
     payload
 })
 
+export const setSearchValue = (payload) => ({
+    type: SET_SEARCHVALUE,
+    payload
+})
+
 export const getPokemonsWithDetails = (pokemons = []) => async (dispatch) => {
     const pokemonsDetailed = await Promise.all(
         pokemons.map((pokemon) => getPokemonDetails(pokemon))
     );
 
     dispatch(setPokemons(pokemonsDetailed));
+    dispatch(setPokemonsFiltered(pokemonsDetailed));
 };
