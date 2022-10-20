@@ -1,12 +1,15 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { setFavorite } from '../../actions'
 import Image from './Image'
 import StarButton from './StarButton'
 import Type from './Type'
 
 const PokemonCard = ({pokemon}) => {
 
+    const dispatch = useDispatch();
     const handeOnFavorite = () => {
-
+        dispatch(setFavorite(pokemon.id))
     }
 
     return (
