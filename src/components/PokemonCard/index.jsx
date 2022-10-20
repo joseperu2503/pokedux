@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from './Image'
 import StarButton from './StarButton'
 import Type from './Type'
 
@@ -13,7 +14,6 @@ const PokemonCard = ({pokemon}) => {
             <div className='flex justify-between items-center'>
                 <span className='text-lg font-bold text-slate-600'>{pokemon.name}</span>
                 <StarButton isFavorite={pokemon.favorite} onClick={handeOnFavorite}/>
-                
             </div>
             
             <div className='flex justify-between'>
@@ -22,11 +22,7 @@ const PokemonCard = ({pokemon}) => {
                         <Type key={type.type.name}>{type.type.name}</Type>
                     ))}
                 </div>
-                <img 
-                    src={pokemon.sprites?.other['official-artwork'].front_default} 
-                    alt={pokemon.name}
-                    className='w-36'
-                />
+                <Image pokemon={pokemon}/>               
             </div>
         </div>
     )
