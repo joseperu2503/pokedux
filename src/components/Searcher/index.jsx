@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
-import { setSearchValue } from '../../actions';
+import { setSearchValue } from '../../slices/dataSlice';
 
 export default function Searcher({ searchValue }) {
 

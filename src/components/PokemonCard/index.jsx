@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { setFavorite } from '../../actions'
+import { setFavorite } from '../../slices/dataSlice'
 import Image from './Image'
 import StarButton from './StarButton'
 import Type from './Type'
