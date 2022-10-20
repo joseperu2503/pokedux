@@ -5,7 +5,8 @@ import { setLoading } from "./uiSlice";
 const initialState = {
     pokemons: [],
     pokemonsFiltered: [],
-    searchValue: ''
+    searchValue: '',
+    darkmode: false
 }
 
 export const fetchPokemonsWithDetails = createAsyncThunk(
@@ -50,10 +51,15 @@ export const dataSlice = createSlice({
                 state.pokemonsFiltered[currentPokemonIndex].favorite = !isFavorite
             }
             
-        }
+        },
+        toggleDarkmode: (state, action) => {
+            state.darkmode = !state.darkmode
+            const root = window.document.documentElement
+		    root.classList.contains('dark') ? root.classList.remove('dark') : root.classList.add('dark')
+        },
     }
 })
 
-export const { setFavorite, setPokemons, setPokemonsFiltered, setSearchValue } = dataSlice.actions
+export const { setFavorite, setPokemons, setPokemonsFiltered, setSearchValue, toggleDarkmode } = dataSlice.actions
 
 export default dataSlice.reducer

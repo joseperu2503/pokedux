@@ -19,6 +19,9 @@ export default function Type({children}) {
             hover:border-purple-700 
             hover:text-purple-700
             hover:bg-purple-100
+            dark:border-white
+            dark:text-white
+            dark:hover:bg-purple-700
         '
     >
         {children}

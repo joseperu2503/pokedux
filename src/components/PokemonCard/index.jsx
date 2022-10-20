@@ -13,9 +13,9 @@ const PokemonCard = ({pokemon}) => {
     }
 
     return (
-        <div className='w-full shadow-md bg-white rounded-md p-4'>
+        <div className='w-full shadow-md bg-white rounded-md p-4 border dark:bg-slate-500'>
             <div className='flex justify-between items-center'>
-                <span className='text-lg font-bold text-slate-600'>{pokemon.name}</span>
+                <span className='text-lg font-bold text-slate-600 dark:text-white'>{pokemon.name}</span>
                 <StarButton isFavorite={pokemon.favorite} onClick={handeOnFavorite}/>
             </div>
             
