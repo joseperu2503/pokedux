@@ -32,7 +32,7 @@ function App() {
 			<div className=' max-w-sm mx-auto'>
 				<Searcher searchValue={searchValue}/>
 			</div>
-			<div className='mt-10 px-10 flex justify-center flex-col max-w-7xl mx-auto'>
+			<div className='mt-10 flex justify-center flex-col max-w-7xl mx-auto'>
                 {loading ? 
 					<Spinner/>
                 :
