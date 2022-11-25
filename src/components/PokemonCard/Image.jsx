@@ -5,7 +5,7 @@ export default function Image({pokemon}) {
     <img 
         src={pokemon.sprites?.other['official-artwork'].front_default} 
         alt={pokemon.name}
-        className='w-36'
+        className='w-[40%] md:w-[50%]'
     />
   )
 }

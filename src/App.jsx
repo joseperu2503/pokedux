@@ -21,7 +21,7 @@ function App() {
 	}, []);
 
 	return (
-		<div className="bg-slate-100 fixed top-0 right-0 left-0 bottom-0 overflow-y-scroll dark:bg-slate-900">
+		<div className="bg-slate-100 fixed top-0 right-0 left-0 bottom-0 overflow-y-scroll dark:bg-slate-900 px-3">
 			<div className='flex justify-end mt-6 mr-6'>
 				<ToggleDarkmode darkmode={darkmode}/>
 			</div>
@@ -32,7 +32,7 @@ function App() {
 			<div className=' max-w-sm mx-auto'>
 				<Searcher searchValue={searchValue}/>
 			</div>
-			<div className='mt-10 px-10 flex justify-center flex-col'>
+			<div className='mt-10 px-10 flex justify-center flex-col max-w-7xl mx-auto'>
                 {loading ? 
 					<Spinner/>
                 :
